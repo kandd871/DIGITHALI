@@ -1,22 +1,47 @@
-.container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+:root {
+    --green: #297307;
+    --pink: #FD02F2;
 }
 
-img{
-    height: 10vw;
-    width: auto;
-    border-radius: 200vw;
-    margin: 1vw;
+body {
+    margin: 0; /* Remove default body margin */
+    overflow-x: hidden; /* Prevent horizontal overflow on the body */
+    background-color: var(--pink);
 }
 
-iframe {
-    border: none; /* Removes default border */
-    width: auto; /* Full width for responsiveness */
-    height: 10vw;
-    overflow: hidden; /* Hide any potential scrollbars */
+.logo {
+    width: 15vw; /* Width of the logo */
+    display: flex; /* Flex container for potential child elements */
+    padding: 0; /* Remove padding */
+    position: fixed; /* Fix the position at the top */
+    top: 0; /* Align it to the top */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, 0); /* Shift it left by half of its own width */
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.container {
+    margin-top: 8vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Each image gets a minimum width */
+    grid-auto-rows: 15vw; /* Fixed row height */
+    gap: 1vw; /* Space between items */
+    background-color: var(--green);
+    padding: 2vw;
+    min-width: 100vw;
+    height: 80vh; /* Fixed height for the container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: auto; /* Prevent vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    align-items: center;
+}
+
+img, iframe, video {
+    height: auto; /* Allow height to adjust based on aspect ratio */
+    width: auto; /* Allow width to vary */
+    max-width: 100%; /* Prevent images from exceeding their grid cell */
     border-radius: 100vw; /* Optional: Rounded corners */
     box-shadow: 0px;
-    margin: 1vw;
+    display: block; /* Ensure items are treated as block elements */
+    margin: 0; /* Remove margin since gap is used in the grid */
 }
