@@ -10,3 +10,13 @@ img{
     border-radius: 200vw;
     margin: 1vw;
 }
+
+iframe {
+    border: none; /* Removes default border */
+    width: auto; /* Full width for responsiveness */
+    height: 10vw;
+    overflow: hidden; /* Hide any potential scrollbars */
+    border-radius: 100vw; /* Optional: Rounded corners */
+    box-shadow: 0px;
+    margin: 1vw;
+}
