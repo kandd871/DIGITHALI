@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+img{
+    height: 10vw;
+    width: auto;
+    border-radius: 200vw;
+    margin: 1vw;
+}
