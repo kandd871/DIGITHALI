@@ -459,14 +459,30 @@ class FloatingCanvas {
                         infoPlate.appendChild(centerContainer);
 
                     }, 1100);
-
                     setTimeout(() => {
                         const containers = document.querySelectorAll('.random-image-container');
-                        containers.forEach((container, index) => {
+                        const containerArray = Array.from(containers);
+                        
+                        // Top images (indices 0-1)
+                        const topImages = containerArray.slice(0, 2);
+                        
+                        // Right side images (indices 6-9) 
+                        const rightImages = containerArray.slice(6, 10);
+                        
+                        // Left side images (indices 2-5)
+                        const leftImages = containerArray.slice(2, 6);
+                        
+                        // Middle line images (indices 10+)
+                        const middleImages = containerArray.slice(10);
+                        
+                        // Reveal in sequence: top, right, left, middle
+                        const sequence = [...topImages, ...rightImages, ...leftImages, ...middleImages];
+                        
+                        sequence.forEach((container, index) => {
                             setTimeout(() => {
                                 container.style.transition = '0.75s';
                                 container.style.opacity = '1';
-                            }, 0 + (index * 70)); // 1200ms initial delay + 100ms per container
+                            }, index * 70); // 70ms delay between each image
                         });
                     }, 1100);
                 }
