@@ -1490,7 +1490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo1 = document.querySelector('#logo1');
     const navs = document.querySelectorAll('.nav');
 
-    const randomRotation = Math.random() * 20 - 20; // Random value between -10 and 10
+    const randomRotation = Math.random() * 30 - 15; // Random value between -20 and 20
 
     const blurb1 = document.querySelector('#blurb1');
     const blurb2 = document.querySelector('#blurb2');
